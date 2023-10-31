@@ -3,10 +3,10 @@
     <div class="post-count">
       <b>전체글 <span style="color: darkorange; margin-right: 5px;">{{ postCount }}</span></b>
     </div>
-    <div class="post-content">
-      <a>제목임</a><br/>
-      <a>내용임</a>
-      <img/>그림임
+    <div class="post-content" v-for="(data,i) in post" :key="i">
+      <a>{{ data.title }}</a><br/>
+      <a>{{ data.content }}</a>
+      <p>{{ data.date }}</p>
     </div>
   </div>
 </template>
@@ -18,16 +18,22 @@ export default {
       postCount: 0,
     }
   },
+  props: {
+    post: Array,
+  }
 }
 </script>
 
 <style>
-.post-list{
+.post-list {
   width: 60%;
 
 }
+
 .post-count {
   border-bottom: 1px solid grey;
-
+}
+.post-content{
+  margin-bottom: 30px;
 }
 </style>
