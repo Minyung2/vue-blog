@@ -1,13 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-
+  <HeaderNav/>
+  <div class="container-fluid d-flex justify-content-between" style="width: 60%;">
+    <PostList/>
+    <MenuNav/>
+  </div>
 </template>
 
 <script>
 
+import HeaderNav from "@/Header.vue";
+import PostList from "@/Post.vue";
+import MenuNav from "@/components/Menu.vue";
+
 export default {
   name: 'App',
   components: {
+    MenuNav,
+    PostList,
+    HeaderNav
 
   }
 }
@@ -20,6 +30,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
