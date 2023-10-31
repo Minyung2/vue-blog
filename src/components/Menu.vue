@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid menu-nav">
-    메뉴임
+
   </div>
 </template>
 <script>

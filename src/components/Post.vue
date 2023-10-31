@@ -4,8 +4,7 @@
       <b>전체글 <span style="color: darkorange; margin-right: 5px;">{{ postCount }}</span></b>
     </div>
     <div class="post-content" v-for="(data,i) in post" :key="i">
-      <a>{{ data.title }}</a><br/>
-      <a>{{ data.content }}</a>
+      <router-link :to="'/detail/'+data.number">{{ data.title }}</router-link><br/>
       <p>{{ data.date }}</p>
     </div>
   </div>
@@ -20,6 +19,7 @@ export default {
   },
   props: {
     post: Array,
+    target : Number,
   }
 }
 </script>
