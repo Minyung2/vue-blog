@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       post: data,
-      target : 0,
     }
   }
 }

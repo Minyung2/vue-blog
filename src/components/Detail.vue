@@ -4,6 +4,7 @@
     <h4>상세보기</h4>
    <h5>{{ post[$route.params.id].title}}</h5>
     <p>{{ post[$route.params.id].content}}</p>
+    <router-view/>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
     props:{
       post : Array,
     }
+
   }
 
 </script>

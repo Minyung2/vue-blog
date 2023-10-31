@@ -4,7 +4,9 @@
       <b>전체글 <span style="color: darkorange; margin-right: 5px;">{{ postCount }}</span></b>
     </div>
     <div class="post-content" v-for="(data,i) in post" :key="i">
-      <router-link :to="'/detail/'+data.number">{{ data.title }}</router-link><br/>
+<!--      <router-link :to="'/detail/'+data.number">{{ data.title }}</router-link><br/>-->
+      <p @mouseover="handleMouseOver" @mouseout="handleMouseOut" @click="$router.push(`detail/`+data.number)" style="text-decoration: underline;"> {{ data.title }}</p><br/>
+      <!--  $router.push = router-link    -->
       <p>{{ data.date }}</p>
     </div>
   </div>
@@ -19,8 +21,15 @@ export default {
   },
   props: {
     post: Array,
-    target : Number,
-  }
+  },
+  methods: {
+    handleMouseOver() {
+      document.body.style.cursor = 'pointer';
+    },
+    handleMouseOut() {
+      document.body.style.cursor = 'auto'; // 기본 커서로 변경
+    },
+  },
 }
 </script>
 
